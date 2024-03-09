@@ -1,25 +1,63 @@
 import './style.css'
 import './public/js/fontawesome/all.min.js'
-// import javascriptLogo from './javascript.svg'
-// import viteLogo from '/vite.svg'
-// import { setupCounter } from './counter.js'
+import anime from 'animejs';
 
-// document.querySelector('#app').innerHTML = `
-//   <div>
-//     <a href="https://vitejs.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-//       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-//     </a>
-//     <h1>Hello Vite!</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite logo to learn more
-//     </p>
-//   </div>
-// `
+const zeroPad = (num, places) => String(num).padStart(places, '0')
 
-// setupCounter(document.querySelector('#counter'))
+const countDownDate = new Date("Mar 11, 2024 19:11:00").getTime();
+
+const getDateDistances = date => {
+    let distance = countDownDate - date;
+    
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    return { days, hours, minutes, seconds };
+}
+
+const setCountDownDisplay = (days, hours, minutes, seconds) => {
+    document.getElementById("countdown-days").innerHTML = zeroPad(days, 2);
+    document.getElementById("countdown-hours").innerHTML = zeroPad(hours, 2);
+    document.getElementById("countdown-minutes").innerHTML = zeroPad(minutes, 2);
+    document.getElementById("countdown-seconds").innerHTML = zeroPad(seconds, 2);
+}
+
+let x = setInterval(function() {
+
+    let now = new Date().getTime();
+
+    let { days, hours, minutes, seconds } = getDateDistances(now);
+
+    setCountDownDisplay(days, hours, minutes, seconds);
+
+    if (distance < 0) {
+        clearInterval(x);
+        // document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+
+anime({
+    targets: '#section-one-top-flower',
+    keyframes: [
+        {translateX: -80, translateY: -80, opacity: 0},
+        {translateX: 0, translateY: 0, opacity: 1},
+    ],
+    opacity: 1,
+    easing: 'easeOutQuad',
+    duration: 1000,
+    // delay: 1000,
+});
+
+anime({
+    targets: '#section-one-bottom-flower',
+    keyframes: [
+        {translateX: 80, translateY: 80, opacity: 0},
+        {translateX: 0, translateY: 0, opacity: 1},
+    ],
+    opacity: 1,
+    easing: 'easeOutQuad',
+    duration: 1000,
+    // delay: 1000,
+});
