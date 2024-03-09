@@ -12,6 +12,7 @@ export default {
       'my-gray': '#9E9E90',
       'my-white': '#F7F7F9',
       'my-yellow': '#F3CB89',
+      'my-light-yellow': '#f6d8a6',
     },
     fontFamily: {
       'kaiven': ['Kaiven', 'sans-serif'],
