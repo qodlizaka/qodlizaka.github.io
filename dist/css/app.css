@@ -1,0 +1,78 @@
+@import url('/resources/css/fontawesome/all.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'birthday';
+    src: url('$fonts/birthday/birthday.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hellodiary';
+    src: url('$fonts/hellodiary/hello dairy.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'harley';
+    src: url('$fonts/harley/harley.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'patrick-hand';
+    src: url('$fonts/patrick_hand/PatrickHand-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'borel';
+    src: url('$fonts/borel/Borel-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'spline-sans-mono';
+    src: url('$fonts/Spline_Sans_Mono/static/SplineSansMono-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50%  { transform: translateY(15px); }
+    100%   { transform: translateY(0px); }
+}
+
+@keyframes open-lid {
+    0% {
+        @apply -translate-x-0 -translate-y-0 -rotate-0
+    }
+
+    60% {
+        @apply -translate-x-20 -translate-y-16 -rotate-45
+    }
+
+    100% {
+        @apply -rotate-[90deg] -translate-x-40 translate-y-16
+    }
+}
+
+@keyframes reveal {
+    0% {
+        @apply h-10
+    }
+
+    100% {
+        @apply h-[26rem]
+    }
+}
+
