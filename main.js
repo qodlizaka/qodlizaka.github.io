@@ -42,7 +42,7 @@ anime({
     targets: '#section-one-top-flower',
     keyframes: [
         {translateX: -80, translateY: -80, opacity: 0},
-        {translateX: 0, translateY: 0, opacity: 1},
+        {translateX: 0, translateY: 0, opacity: .7},
     ],
     opacity: 1,
     easing: 'easeOutQuad',
@@ -54,7 +54,7 @@ anime({
     targets: '#section-one-bottom-flower',
     keyframes: [
         {translateX: 80, translateY: 80, opacity: 0},
-        {translateX: 0, translateY: 0, opacity: 1},
+        {translateX: 0, translateY: 0, opacity: .7},
     ],
     opacity: 1,
     easing: 'easeOutQuad',
