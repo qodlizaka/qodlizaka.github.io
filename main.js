@@ -14,7 +14,7 @@ const getDateDistances = date => {
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    return { days, hours, minutes, seconds };
+    return { distance, days, hours, minutes, seconds };
 }
 
 const setCountDownDisplay = (days, hours, minutes, seconds) => {
@@ -28,7 +28,7 @@ let x = setInterval(function() {
 
     let now = new Date().getTime();
 
-    let { days, hours, minutes, seconds } = getDateDistances(now);
+    let { distance, days, hours, minutes, seconds } = getDateDistances(now);
 
     setCountDownDisplay(days, hours, minutes, seconds);
 
