@@ -4,7 +4,7 @@ import anime from 'animejs';
 
 const zeroPad = (num, places) => String(num).padStart(places, '0')
 
-const countDownDate = new Date("Mar 11, 2024 19:11:00").getTime();
+const countDownDate = new Date("June 11, 2024 19:11:00").getTime();
 
 const getDateDistances = date => {
     let distance = countDownDate - date;
@@ -55,6 +55,18 @@ anime({
     keyframes: [
         {translateX: 80, translateY: 80, opacity: 0},
         {translateX: 0, translateY: 0, opacity: .7},
+    ],
+    opacity: 1,
+    easing: 'easeOutQuad',
+    duration: 1000,
+    // delay: 1000,
+});
+
+anime({
+    targets: '#section-one-center-flower',
+    keyframes: [
+        {scale: .4, opacity: 0, rotate: 0},
+        {scale: 1, opacity: .7, rotate: 90},
     ],
     opacity: 1,
     easing: 'easeOutQuad',

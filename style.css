@@ -1,4 +1,4 @@
-@import url('./public/css/fontawesome/all.min.css');
+@import url('/css/fontawesome/all.min.css');
 
 @tailwind base;
 @tailwind components;
@@ -7,10 +7,10 @@
 @layer base {
     @font-face {
         font-family: 'Kaiven';
-        src: url("./public/fonts/Kaiven Regular Rounded.ttf") format('truetype');
+        src: url("/fonts/Kaiven Regular Rounded.ttf") format('truetype');
     }
     @font-face {
         font-family: 'Bellenia Love';
-        src: url("./public/fonts/Bellenia Love.ttf") format('truetype');
+        src: url("/fonts/Bellenia Love.ttf") format('truetype');
     }
 }
