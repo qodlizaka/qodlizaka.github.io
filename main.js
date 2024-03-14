@@ -1,5 +1,6 @@
 import './style.css'
 import './public/js/fontawesome/all.min.js'
+import './public/css/fontawesome/all.min.css'
 import anime from 'animejs';
 
 const zeroPad = (num, places) => String(num).padStart(places, '0')
@@ -72,4 +73,43 @@ anime({
     easing: 'easeOutQuad',
     duration: 1000,
     // delay: 1000,
+});
+
+let isMenuOpen = false;
+
+const animateOpenMenu = e => {
+    anime({
+        targets: '.sub-menu',
+        translateX: 0,
+        opacity: 1,
+        scale: 1,
+        delay: function(el, i, l) {
+            return i * 100;
+        },
+        endDelay: function(el, i, l) {
+            return (l - i) * 100;
+        }
+    });      
+}
+
+const animateCloseMenu = e => {
+    anime({
+        targets: '.sub-menu',
+        translateX: 56,
+        opacity: 0,
+        scale: .2,
+        delay: function(el, i, l) {
+            return i * 75;
+        },
+        endDelay: function(el, i, l) {
+            return (l - i) * 75;
+        }
+    });      
+}
+
+const openMenuButton = document.getElementById('open-menu-button');
+
+openMenuButton.addEventListener('click', e => {
+    !isMenuOpen ? animateOpenMenu() : animateCloseMenu();
+    isMenuOpen = !isMenuOpen;
 });
